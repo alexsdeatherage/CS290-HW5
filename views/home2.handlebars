@@ -1,5 +1,5 @@
 
-<h1>Get Request Received: </h1>
+<h1>Post Request Received: </h1>
 
 <table border='1' style='border-collapse:collapse'>
     <tr>
@@ -13,8 +13,16 @@
     </tr>
     {{/each}}
 </table>
-{{!-- <ul>
+
+<table border='1' style='border-collapse:collapse'>
+    <tr>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
     {{#each dataList}}
-        <li>{{this.name}}: {{this.value}}</li>
+    <tr>
+        <th>{{this.name}}</th>
+        <th>{{this.value}}</th>
+    </tr>
     {{/each}}
-</ul> --}}
+</table>
