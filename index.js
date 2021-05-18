@@ -22,8 +22,8 @@ const getQueryParams = (req, res, next) => {
 app.use(getQueryParams)
 
 app.get('/', (req, res) => {
-    console.log(queryStuff)
-    res.render('home', req.locals.queryStuff);
+    console.log(res.locals.queryStuff)
+    res.render('home', res.locals.queryStuff);
 
 })
 
