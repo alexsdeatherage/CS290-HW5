@@ -38,12 +38,17 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    let qParams = []
+    let qParams1 = []
+    let qParams2 = []
     for (let i in res.locals.bodyStuff) {
-        qParams.push({'name':i, 'value':res.locals.bodyStuff[i]})
+        qParams1.push({'name':i, 'value':res.locals.bodyStuff[i]})
+    }
+    for (let i in res.locals.queryStuff) {
+        qParams2.push({'name':i, 'value':res.locals.queryStuff[i]})
     }
     let context = {}
-    context.dataList = qParams;
+    context.dataList = qParams1;
+    context.queryList = qParams2
     res.render('home2', context)
 })
 
