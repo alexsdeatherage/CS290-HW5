@@ -14,9 +14,17 @@ app.use(express.json())
 
 app.set('port', port);
 
+const getQueryParams = (req, res, next) => {
+    res.locals.queryStuff = req.query;
+    next();
+}
+
+app.use(getQueryParams)
+
 app.get('/', (req, res) => {
-    console.log(req.query);
-    res.render('home', req.query);
+    console.log(queryStuff)
+    res.render('home', req.locals.queryStuff);
+
 })
 
 app.use(function (req, res) {
