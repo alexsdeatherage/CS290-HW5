@@ -1,6 +1,7 @@
 const express = require('express')
 
 const app = express();
+const port = process.env.PORT || 2121;
 
 const exphbs = require('express-handlebars')
 app.engine('handlebars', exphbs());
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json())
 
 
-app.set('port', 2121);
+app.set('port', port);
 
 app.get('/', (req, res) => {
     console.log(req.query);
